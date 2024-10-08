@@ -81,6 +81,7 @@ body {
   }
 }
 
+
 @keyframes swipeUp {
   to {
     transform: translateY(-100%);
