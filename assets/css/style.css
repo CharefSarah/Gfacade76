@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html,
+body {
+
+  font-family: "Roboto flex";
+  scroll-behavior: smooth;
+  background-color: var(--color--lightblue);
+  font-size: 13px;
+}
+
+:root {
+ 
+  --color--lightblue: #f5f5f5;
+  --color--blue: #0f1a34;
+  --color--midblue: #274489;
+}
+
+::selection {
+
+  background-color: var(--color--midblue);
+  color: var(--color--lightblue);
+
+}
+
+
+
+
+#loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color--midblue);
+  z-index: 9999;
+  overflow: none;
+}
+
+#svg-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#svg-container svg{
+  height: 10rem;
+  width: 10rem;
+}
+#logo_path {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600; 
+  animation: draw 5s ease-in-out forwards, fill 0.5s ease-in 3s forwards; 
+}
+
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0; 
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: var(--color--midblue);
+  }
+  to {
+    fill: var(--color--lightblue); 
+  }
+}
+
+@keyframes swipeUp {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+#loader.swipeUp {
+  animation: swipeUp 1s ease forwards;
+}
+
+
+.home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--color--blue);
+}
+
+
+
+nav {
+  height: 15vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 3rem;
+
+}
+
+.nav__elem {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+}
+
+nav :nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+}
+
+
+.nav__elem  svg {
+  height: 60%;
+  cursor: pointer;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: var(--color--lightblue);
+}
+
+nav a:hover {
+  color: var(--color--lightblue);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+
+
+ul {
+  gap: 2rem;
+}
+
+ul,
+li {
+  display: flex;
+  flex-direction: row;
+}
+
+.callto {
+  margin-left: 4rem;
+  margin-right: 2rem;
+  font-weight: 500;
+}
+
+
+
+.btn a {
+  padding: 0.8rem 2rem;
+  background-color: var(--color--midblue);
+  color: var(--color--lightblue);
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+
+}
+
+.btn a:hover {
+  background-color: var(--color--lightblue);
+  color: var(--color--blue);
+  text-decoration: none;
+}
+
+
+header {
+  padding-inline: 3rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+
+}
+
+video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.03;
+}
+
+
+.header__content {
+  height: calc(100vh - 15vh);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  justify-content: center;
+  padding-inline: 3rem;
+  gap: 1rem;
+
+}
+
+header h1 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color--lightblue);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+
+}
+
+header h2 {
+
+  font-size: 5rem;
+  font-weight: 500;
+  width: 65%;
+  color: var(--color--lightblue);
+  text-transform: uppercase;
+  text-wrap: balance;
+
+}
+
+.calltoaction {
+  height: 55vh;
+  width: 25%;
+  background-color: var(--color--midblue);
+  color: var(--color--lightblue);
+  position: absolute;
+  right: 6rem;
+  top: 25%;
+  clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  padding: 2rem;
+
+
+}
+
+.calltoaction__container {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  width: 100%;
+  height: 50%;
+  gap: 1.5rem;
+ 
+}
+
+.calltoaction h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--color--lightblue);
+  text-transform: uppercase;
+
+
+
+}
+
+.calltoaction img {
+  width: 50%;
+  height: 90%;
+  object-fit: cover;
+
+
+}
+
+
+.calltoaction__content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: end;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 1rem;
+ 
+
+
+}
+
+
+
+.calltoaction__content p {
+  line-height: 155%;
+  margin-bottom: 2rem;
+  text-wrap: balance;
+
+
+
+}
+
+
+.calltoaction__content .btn a {
+
+  background-color: var(--color--lightblue);
+  border: 2px solid var(--color--midblue);
+  color: var(--color--midblue);
+
+}
+
+.calltoaction__content .btn a:hover {
+
+  background-color: var(--color--blue);
+  color: var(--color--lightblue);
+
+}
+
+
+
+.container {
+  background-color: var(--color--lightblue);
+  width: 100%;
+  height: 110vh;
+  padding: 3rem;
+  margin-bottom: 4rem;
+}
+
+.title {
+  margin-top: 4rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color--midblue)
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.slides-wrapper {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  padding-block: 2rem;
+
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  gap: 4rem;
+  align-items: end;
+  
+}
+
+.slide img.main-image {
+  width: 95%;
+  height: 100% ;
+  object-fit: cover;
+}
+
+.slide-thumbnails {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+  width: 100%;
+  gap: 1rem;
+}
+.slider__img__house{
+  clip-path: polygon(50% 0%, 100% 38%, 100% 100%, 0 100%, 0% 38%);
+}
+
+.slider__images {
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+
+
+.slide-thumbnails img {
+  width: auto;
+  height: 35vh;
+  aspect-ratio: 1.2 / 1 !important;
+  object-fit: cover;
+
+}
+
+.slide-content {
+  flex: 1;
+  max-width: 100%;
+}
+
+.slide-content h3{
+  
+  font-size: 1.5rem;
+  color: var(--color--blue);
+  font-size: 500;
+  text-transform: uppercase;
+  width: 45%;
+  text-wrap: balance;
+
+}
+
+
+.slide-content p {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color--blue);
+  width: 60%;
+  text-wrap: balance;
+  line-height: 155%;
+
+}
+
+.buttons {
+  position: relative;
+  transform: translateY(-50%);
+  z-index: 1;
+ 
+}
+
+.buttons button {
+  background-color: var(--color--lightblue);
+  color: var(--color--blue);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 5px;
+  border: 1px solid  #0f1a34;
+  
+}
+
+.buttons button:hover {
+  background-color: #0f1a3423;
+  
+}
